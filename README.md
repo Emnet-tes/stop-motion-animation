@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stop Motion Animation 🎥
 
-## Getting Started
+A web-based application designed to create, edit, and preview stop-motion animations. This tool allows users to bring their ideas to life frame by frame, offering intuitive controls and a seamless user experience.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Frame-by-Frame Animation**: Upload and arrange images to create animations.
+- **Preview Animations**: Real-time preview of the animation while editing.
+- **Customizable Frame Rates**: Adjust the speed of the animation.
+- **Save and Export**: Save your project or export the animation as a video or GIF.
+- **User-Friendly Interface**: Simple and intuitive design for ease of use.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: React, HTML5, CSS3
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Other Tools**: Canvas API, FFmpeg for video processing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installation and Setup
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Emnet-tes/stop-motion-animation.git
+   cd stop-motion-animation
+   npm install
+   npm start
+   
