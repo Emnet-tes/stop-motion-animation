@@ -1,21 +1,22 @@
 # Stop Motion Animation 🎥
 
-A web-based application designed to create, edit, and preview stop-motion animations. This tool allows users to bring their ideas to life frame by frame, offering intuitive controls and a seamless user experience.
+A Next.js application that allows users to create stop-motion animations by capturing frames with their webcam and previewing them in real time. The application offers intuitive controls and customizable playback options, making it easy for anyone to craft engaging animations.
 
 ## 🚀 Features
 
-- **Frame-by-Frame Animation**: Upload and arrange images to create animations.
-- **Preview Animations**: Real-time preview of the animation while editing.
-- **Customizable Frame Rates**: Adjust the speed of the animation.
-- **Save and Export**: Save your project or export the animation as a video or GIF.
-- **User-Friendly Interface**: Simple and intuitive design for ease of use.
+- **Webcam Integration**: Capture frames directly from your webcam.
+- **Animation Playback**: Play, pause, and reset animations seamlessly.
+- **Adjustable Frame Rate**: Control the playback speed with an FPS slider.
+- **Responsive Design**: Works smoothly on devices of all sizes.
+- **Intuitive UI**: Simple and user-friendly interface powered by Tailwind CSS.
 
-## 🛠️ Technologies Used
+## 🛠️ Built With
 
-- **Frontend**: React, HTML5, CSS3
-- **Backend**: Node.js, Express
-- **Database**: MongoDB
-- **Other Tools**: Canvas API, FFmpeg for video processing
+- **Next.js**: React-based framework for optimized rendering and routing.
+- **React Context API**: Manage and share animation frames across components.
+- **React Webcam**: Webcam integration for capturing image frames.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **JavaScript Timers**: Used for animation playback functionality.
 
 ## 📦 Installation and Setup
 
