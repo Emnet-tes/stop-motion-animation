@@ -21,7 +21,7 @@ export const WebcamCapture: React.FC = () => {
         audio={false}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
-        className="w-full rounded-lg shadow-lg"
+        className="w-full rounded-lg shadow-lg border "
       />
       <button
         onClick={capture}

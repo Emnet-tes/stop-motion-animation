@@ -8,7 +8,7 @@ export const FrameGallery: React.FC = () => {
 
   return (
     <div className="bg-gray-100 p-4 rounded-lg">
-      <h2 className="text-xl font-semibold mb-4">Frames</h2>
+      <h2 className="text-xl font-semibold mb-4 text-black">Frames</h2>
       <div className="space-y-4">
         {frames.map((frame, index) => (
           <div
