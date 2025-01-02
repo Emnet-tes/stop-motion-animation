@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image"; // Import the Next.js Image component
 import { useFrames } from "../contexts/FramesContext";
 
 export const AnimationPreview: React.FC = () => {
@@ -37,10 +38,12 @@ export const AnimationPreview: React.FC = () => {
       <h2 className="text-xl font-semibold mb-4">Animation Preview</h2>
       <div className="bg-gray-200 rounded-lg p-4 mb-4">
         {frames.length > 0 ? (
-          <img
+          <Image
             src={frames[currentFrame].dataUrl}
             alt={`Frame ${currentFrame + 1}`}
             className="w-full h-64 object-contain"
+            width={512} // Adjust width and height based on your design
+            height={256}
           />
         ) : (
           <div className="w-full h-64 flex items-center justify-center text-gray-500">

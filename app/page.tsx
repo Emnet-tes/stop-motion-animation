@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import FruitAnimation from "@/components/fruit-animation";
 import { WebcamCapture } from "@/components/WebcamCapture";
 import { AnimationPreview } from "@/components/AnimationPreview";

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image"; // Import the Next.js Image component
 import { useFrames } from "../contexts/FramesContext";
 
 export const FrameGallery: React.FC = () => {
@@ -15,11 +16,15 @@ export const FrameGallery: React.FC = () => {
             key={frame.id}
             className="bg-white p-2 rounded-lg shadow-md flex items-center"
           >
-            <img
-              src={frame.dataUrl}
-              alt={`Frame ${index + 1}`}
-              className="w-24 h-24 object-cover rounded mr-4"
-            />
+            <div className="relative w-24 h-24 rounded mr-4">
+              <Image
+                src={frame.dataUrl}
+                alt={`Frame ${index + 1}`}
+                className="object-cover rounded"
+                layout="fill" // Makes the image fill the container
+                priority // Optional: Ensures the images are loaded quickly
+              />
+            </div>
             <span className="flex-grow">Frame {index + 1}</span>
             <button
               onClick={() => removeFrame(frame.id)}
