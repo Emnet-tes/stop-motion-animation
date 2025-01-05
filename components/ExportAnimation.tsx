@@ -1,11 +1,10 @@
-"use client";
-
 import React, { useState } from "react";
 import { useFrames } from "../contexts/FramesContext";
 
 export const ExportAnimation: React.FC = () => {
   const { frames } = useFrames();
   const [isExporting, setIsExporting] = useState(false);
+  const [exportFormat, setExportFormat] = useState("mp4"); 
 
   const exportAnimation = async () => {
     if (frames.length === 0) return;
@@ -25,20 +24,23 @@ export const ExportAnimation: React.FC = () => {
       canvas.width = img.width;
       canvas.height = img.height;
 
+      // Get appropriate media type based on export format
+      const mimeType = exportFormat === "webm" ? "video/webm" : "video/mp4";
+
       // Create a MediaRecorder to record the canvas
       const stream = canvas.captureStream(30); // 30 fps
       const mediaRecorder = new MediaRecorder(stream, {
-        mimeType: "video/webm",
+        mimeType,
       });
 
       const chunks: Blob[] = [];
       mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
       mediaRecorder.onstop = () => {
-        const blob = new Blob(chunks, { type: "video/webm" });
+        const blob = new Blob(chunks, { type: mimeType });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = "stop-motion-animation.webm";
+        a.download = `stop-motion-animation.${exportFormat}`;
         a.click();
         URL.revokeObjectURL(url);
         setIsExporting(false);
@@ -61,14 +63,30 @@ export const ExportAnimation: React.FC = () => {
     }
   };
 
+  const handleFormatChange = (event:React.ChangeEvent<HTMLSelectElement>) => {
+    setExportFormat(event.target.value);
+  };
+
   return (
     <div>
+      <select
+        value={exportFormat}
+        onChange={handleFormatChange}
+        className=" bg-blue-500 text-white py-2 px-4 rounded mb-4"
+      >
+        <option value="webm" className="bg-slate-600">
+          WebM
+        </option>
+        <option value="mp4" className="bg-slate-600">
+          MP4
+        </option>
+      </select>
       <button
         onClick={exportAnimation}
         disabled={frames.length === 0 || isExporting}
         className="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors disabled:opacity-50"
       >
-        {isExporting ? "Exporting..." : "Export as WebM"}
+        {isExporting ? "Exporting..." : "Export Animation"}
       </button>
     </div>
   );

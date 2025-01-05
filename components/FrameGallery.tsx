@@ -25,7 +25,7 @@ export const FrameGallery: React.FC = () => {
                 priority // Optional: Ensures the images are loaded quickly
               />
             </div>
-            <span className="flex-grow">Frame {index + 1}</span>
+            <span className="flex-grow text-black">Frame {index + 1}</span>
             <button
               onClick={() => removeFrame(frame.id)}
               className="bg-red-500 text-white p-2 rounded hover:bg-red-600 transition-colors"
