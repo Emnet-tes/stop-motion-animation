@@ -14,7 +14,7 @@ export default function FruitAnimation() {
   const [isAnimating, setIsAnimating] = useState(true);
 
   return (
-    <div className="relative h-64 w-full overflow-hidden  p-4">
+    <div className="relative h-64 w-full overflow-hidden p-4">
       {fruits.map((fruit, index) => (
         <motion.div
           key={fruit.name}
@@ -50,7 +50,7 @@ export default function FruitAnimation() {
             repeat: isAnimating ? Infinity : 0,
             repeatType: "reverse",
             delay: index * 0.3,
-            ease: "easeInOut",
+            ease: "linear", // Linear easing for frame-like abruptness
           }}
           whileHover={{ scale: 1.5 }}
           drag
